@@ -60,8 +60,6 @@ public class ServiceCPU {
         return ajoutReussi;
     }
 
-    }
-
     /**
      * Cette méthode permet d'obtenir la liste actuelle de nos CPU.
      *
@@ -111,7 +109,7 @@ public class ServiceCPU {
      * @return la taille de la liste de CPU
      */
     public int tailleDeLaListe() {
-        // VOTRE CODE ICI...
+        return tableauCPU.length;
     }
 
     /**
@@ -123,16 +121,22 @@ public class ServiceCPU {
      *         limites du tableau
      */
     public CPU obtenirUnElement(int indice) {
-        // VOTRE CODE ICI...
+        CPU element = null;
+        if (indice > 0 && indice < tableauCPU.length) {
+            if (tableauCPU[indice] != null) {
+                element = tableauCPU[indice];
+            }
+        }
+        return element;
     }
-
+        
     /**
      * Getter de la référence au contrôleur de l'application MVC "Processeur".
      *
      * @return la référence au contrôleur de l'application MVC "Processeur"
      */
     public Controller getRefCtrl() {
-        // VOTRE CODE ICI...
+        return refCtrl;
     }
 
     /**
@@ -141,7 +145,7 @@ public class ServiceCPU {
      * @param refCtrl référence au contrôleur de l'application MVC "Processeur"
      */
     public void setRefCtrl(Controller refCtrl) {
-        // VOTRE CODE ICI...
+        this.refCtrl = refCtrl;
     }
 
 }
