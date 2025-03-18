@@ -18,18 +18,23 @@ public class Controller {
      /**
      * Référence à la vue MVC de notre application.
      */
-    // VOTRE CODE ICI...
+    private View refView;
 
     /**
      * Référence au service CPU de notre application.
      */
-    // VOTRE CODE ICI...
+    private ServiceCPU refServiceCPU;
 
     /**
      * Constructeur de la classe Controller. Les attributs de la classe Controller sont initialisés à null.
      */
-    public Controller() {
-        // VOTRE CODE ICI...
+    public Controller(View refView, View view) {
+        this.refView = null;
+        this.refServiceCPU = null;
+    }
+
+    public Controller(Object refView2, View view) {
+        //TODO Auto-generated constructor stub
     }
 
     /**
@@ -85,7 +90,7 @@ public class Controller {
      * @return la référence à la vue de l'application MVC "Processeur"
      */
     public View getRefView() {
-        // VOTRE CODE ICI...
+        return refView;
     }
 
     /**
@@ -94,16 +99,16 @@ public class Controller {
      * @param refView référence à la vue de l'application MVC "Processeur"
      */
     public void setRefView(View refView) {
-        // VOTRE CODE ICI...
+        this.refView = refView;
     }
-
+    
     /**
      * Getter de la référence au service CPU de l'application MVC "Processeur".
      *
      * @return la référence au service CPU de l'application MVC "Processeur"
      */
     public ServiceCPU getRefServiceCPU() {
-        // VOTRE CODE ICI...
+        return refServiceCPU;
     }
 
     /**
@@ -112,7 +117,7 @@ public class Controller {
      * @param refServiceCPU référence au service CPU de l'application MVC "Processeur"
      */
     public void setRefServiceCPU(ServiceCPU refServiceCPU) {
-        // VOTRE CODE ICI...
+        this.refServiceCPU = refServiceCPU;
     }
 
 }
