@@ -5,8 +5,8 @@ import processeur.services.ServiceCPU;
 import processeur.views.View;
 
 /**
- * Application "Processeur". Application qui fait un usage progressivement plus complexe de classes et objets.
- *
+ * Application "Processeur". 
+ * Application qui fait un usage progressivement plus complexe de classes et objets.
  *
  * @author <a href="mailto:friedlip@edufr.ch">Paul Friedli</a>
  * @since 18 octobre 2023
@@ -15,21 +15,22 @@ import processeur.views.View;
 public class Processeur {
 
     /**
-     * La méthode main() de l'application, là où tout commence mais... tout se finit-il bien là ?
+     * La méthode main() de l'application, là où tout commence.
      *
      * @param args les arguments du programme passés sur la ligne de commande
      */
-    public static void main(String[] args ) {
-        Controller ctrl = new Controller(null, null);
-        ServiceCPU service = new ServiceCPU(null, ctrl);
+    public static void main(String[] args) {
+        // Création des objets de l'application
         View view = new View();
+        Controller ctrl = new Controller(null, view);
+        ServiceCPU service = new ServiceCPU(ctrl);
 
+        // Mise en place des références croisées
         ctrl.setRefServiceCPU(service);
         ctrl.setRefView(view);
-        service.setRefCtrl(ctrl);
         view.setRefCtrl(ctrl);
 
+        // Démarrer le contrôleur
         ctrl.start();
     }
-
 }

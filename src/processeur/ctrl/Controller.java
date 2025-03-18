@@ -28,9 +28,13 @@ public class Controller {
     /**
      * Constructeur de la classe Controller. Les attributs de la classe Controller sont initialisés à null.
      */
-    public Controller(View refView, ServiceCPU refServiceCPU) {
+    public Controller(View refView, View view) {
         this.refView = null;
         this.refServiceCPU = null;
+    }
+
+    public Controller(Object refView2, View view) {
+        //TODO Auto-generated constructor stub
     }
 
     /**
